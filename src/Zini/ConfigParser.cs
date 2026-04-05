@@ -1,7 +1,7 @@
 using System.Collections.Frozen;
 using System.Runtime.CompilerServices;
 
-namespace sINI;
+namespace Zini;
 
 public static class ConfigParser
 {

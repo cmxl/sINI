@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Zini/Zini.csproj" />
+    <Project Path="src/Zini.Configuration/Zini.Configuration.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Zini.Sample.NugetPackage/Zini.Sample.NugetPackage.csproj" />
+    <Project Path="samples/Zini.Sample.Parser/Zini.Sample.Parser.csproj" />
+    <Project Path="samples/Zini.Sample.Configuration/Zini.Sample.Configuration.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Zini.Tests/Zini.Tests.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Zini.Benchmarks/Zini.Benchmarks.csproj" />
+  </Folder>
+</Solution>

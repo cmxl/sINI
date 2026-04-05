@@ -1,4 +1,4 @@
-namespace sINI;
+namespace Zini;
 
 internal enum State
 {

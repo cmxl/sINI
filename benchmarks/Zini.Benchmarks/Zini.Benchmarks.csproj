@@ -8,13 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/sINI/sINI.csproj" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="some.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="../../src/Zini/Zini.csproj" />
   </ItemGroup>
 
 </Project>

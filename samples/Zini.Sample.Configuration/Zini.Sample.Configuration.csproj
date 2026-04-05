@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/sINI.Configuration/sINI.Configuration.csproj" />
+    <ProjectReference Include="../../src/Zini.Configuration/Zini.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

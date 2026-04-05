@@ -1,6 +1,6 @@
 using System.Collections.Frozen;
 
-namespace sINI.Tests;
+namespace Zini.Tests;
 
 public class ConfigParserTests
 {

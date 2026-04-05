@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 
-namespace sINI.Configuration;
+namespace Zini.Configuration;
 
 public class ConfigFileConfigurationSource : FileConfigurationSource
 {

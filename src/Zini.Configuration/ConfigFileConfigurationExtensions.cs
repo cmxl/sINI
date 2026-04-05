@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 
-namespace sINI.Configuration;
+namespace Zini.Configuration;
 
 public static class ConfigFileConfigurationExtensions
 {

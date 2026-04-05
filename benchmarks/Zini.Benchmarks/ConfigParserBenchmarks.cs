@@ -4,7 +4,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Order;
 using IniParser.Model;
 using IniParser.Parser;
-using sINI;
+using Zini;
 
 [MemoryDiagnoser]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
@@ -29,8 +29,8 @@ public class ConfigParserBenchmarks
 
 	// --- Small config (typical single-component config) ---
 
-	[Benchmark(Description = "sINI"), BenchmarkCategory("Small")]
-	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Small_sINI()
+	[Benchmark(Description = "Zini"), BenchmarkCategory("Small")]
+	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Small_Zini()
 		=> ConfigParser.Parse(_smallConfig);
 
 	[Benchmark(Description = "ini-parser", Baseline = true), BenchmarkCategory("Small")]
@@ -39,8 +39,8 @@ public class ConfigParserBenchmarks
 
 	// --- Medium config (realistic application config) ---
 
-	[Benchmark(Description = "sINI"), BenchmarkCategory("Medium")]
-	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Medium_sINI()
+	[Benchmark(Description = "Zini"), BenchmarkCategory("Medium")]
+	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Medium_Zini()
 		=> ConfigParser.Parse(_mediumConfig);
 
 	[Benchmark(Description = "ini-parser", Baseline = true), BenchmarkCategory("Medium")]
@@ -49,8 +49,8 @@ public class ConfigParserBenchmarks
 
 	// --- Large config (stress test) ---
 
-	[Benchmark(Description = "sINI"), BenchmarkCategory("Large")]
-	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Large_sINI()
+	[Benchmark(Description = "Zini"), BenchmarkCategory("Large")]
+	public IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>> Large_Zini()
 		=> ConfigParser.Parse(_largeConfig);
 
 	[Benchmark(Description = "ini-parser", Baseline = true), BenchmarkCategory("Large")]

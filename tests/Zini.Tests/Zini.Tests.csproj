@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/sINI/sINI.csproj" />
-    <ProjectReference Include="../../src/sINI.Configuration/sINI.Configuration.csproj" />
+    <ProjectReference Include="../../src/Zini/Zini.csproj" />
+    <ProjectReference Include="../../src/Zini.Configuration/Zini.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

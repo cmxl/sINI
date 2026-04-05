@@ -7,17 +7,21 @@
 
     <Version>1.0.0</Version>
     <Authors>cmxl (Tobias Haimerl)</Authors>
-    <Description>A fast, zero-allocation INI-style configuration file parser for .NET.</Description>
+    <Description>Microsoft.Extensions.Configuration provider for INI-style config files using Zini.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/cmxl/sini</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/cmxl/sini.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/cmxl/zini</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cmxl/zini.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>ini;config;parser;configuration</PackageTags>
+    <PackageTags>zini;ini;config;parser;configuration;microsoft-extensions-configuration</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="sINI.Tests" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zini\Zini.csproj" />
   </ItemGroup>
 
   <ItemGroup>

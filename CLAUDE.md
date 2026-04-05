@@ -6,35 +6,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```powershell
 # Build entire solution
-dotnet build sINI.slnx
+dotnet build Zini.slnx
 
 # Run all tests
-dotnet test sINI.slnx
+dotnet test Zini.slnx
 
 # Run a single test by name
-dotnet test tests/sINI.Tests --filter "Parse_SimpleSection_ReturnsKeyValues"
+dotnet test tests/Zini.Tests --filter "Parse_SimpleSection_ReturnsKeyValues"
 
 # Run samples
-dotnet run --project samples/sINI.Sample.Parser/sINI.Sample.Parser.csproj
-dotnet run --project samples/sINI.Sample.Configuration/sINI.Sample.Configuration.csproj
+dotnet run --project samples/Zini.Sample.Parser/Zini.Sample.Parser.csproj
+dotnet run --project samples/Zini.Sample.Configuration/Zini.Sample.Configuration.csproj
 
 # Run benchmarks (Release mode required)
-dotnet run -c Release --project benchmarks/sINI.Benchmarks/sINI.Benchmarks.csproj
+dotnet run -c Release --project benchmarks/Zini.Benchmarks/Zini.Benchmarks.csproj
 ```
 
 ## Solution Structure
 
 ```
 src/
-  sINI/                          — Core parser library (zero dependencies)
-  sINI.Configuration/            — IConfigurationBuilder extension (AddConfigFile)
+  Zini/                          — Core parser library (zero dependencies)
+  Zini.Configuration/            — IConfigurationBuilder extension (AddConfigFile)
 tests/
-  sINI.Tests/                    — xUnit tests for ConfigParser
+  Zini.Tests/                    — xUnit tests for ConfigParser
 samples/
-  sINI.Sample.Parser/            — Console app using ConfigParser directly
-  sINI.Sample.Configuration/     — Console app using ConfigurationBuilder
+  Zini.Sample.Parser/            — Console app using ConfigParser directly
+  Zini.Sample.Configuration/     — Console app using ConfigurationBuilder
 benchmarks/
-  sINI.Benchmarks/               — BenchmarkDotNet: sINI vs ini-parser
+  Zini.Benchmarks/               — BenchmarkDotNet: Zini vs ini-parser
 docs/
   config-format-spec.md          — Full format specification (comments, quoting, merging rules)
 ```
@@ -45,9 +45,9 @@ Uses `.slnx` (XML solution format). No `global.json`, `Directory.Build.props`, o
 
 .NET 10 INI-style config file parser with a `Microsoft.Extensions.Configuration` integration.
 
-All types in the core library are in the `sINI` namespace. Internal types (`State`, `SpecialChars`) are exposed to `sINI.Tests` via `InternalsVisibleTo`.
+All types in the core library are in the `Zini` namespace. Internal types (`State`, `SpecialChars`) are exposed to `Zini.Tests` via `InternalsVisibleTo`.
 
-### Core parser (`src/sINI`)
+### Core parser (`src/Zini`)
 
 **`ConfigParser.cs`** — Static `Parse(string)` and `Parse(ReadOnlySpan<char>)` overloads driving a state machine inside a `ref struct ParseContext`. Each parser state (`Data`, `ConfigSectionOpen`, `ConfigSectionClose`, `Key`, `Value`, `Comment`) has its own handler block in a `switch` over `State`. The design is zero-allocation on the hot path — all scanning uses `SearchValues<char>` for SIMD-accelerated bulk character search (`IndexOfAny`, `IndexOfAnyExcept`). Returns `FrozenDictionary` instances for true immutability. Uses `Dictionary.GetAlternateLookup<ReadOnlySpan<char>>()` to avoid string allocations on section cache hits.
 
@@ -60,7 +60,7 @@ All types in the core library are in the `sINI` namespace. Internal types (`Stat
 
 **Output type:** `IReadOnlyDictionary<string, IReadOnlyDictionary<string, string>>` — outer key is section name, inner dict is key-value pairs. Both levels use `OrdinalIgnoreCase`.
 
-### Configuration provider (`src/sINI.Configuration`)
+### Configuration provider (`src/Zini.Configuration`)
 
 Bridges `ConfigParser` to `Microsoft.Extensions.Configuration`. The provider flattens the two-level dict into `ConfigurationPath.Combine(section, key)` format (colon-delimited, e.g. `Server:port`). Global keys (empty section) map directly without a prefix.
 

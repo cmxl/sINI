@@ -1,6 +1,6 @@
 using System.Buffers;
 
-namespace sINI;
+namespace Zini;
 
 internal static class SpecialChars
 {

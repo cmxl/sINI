@@ -1,4 +1,4 @@
-# sINI
+# Zini
 
 A high-performance, zero-allocation INI-style configuration file parser for .NET 10 with `Microsoft.Extensions.Configuration` integration.
 
@@ -15,9 +15,10 @@ A high-performance, zero-allocation INI-style configuration file parser for .NET
 
 ## Installation
 
+[![https://www.nuget.org/packages/Zini.Configuration](https://img.shields.io/nuget/dt/Zini.Configuration)](https://www.nuget.org/packages/Zini.Configuration)
+
 ```shell
-dotnet add package sINI
-dotnet add package sINI.Configuration  # optional, for IConfigurationBuilder support
+dotnet add package Zini.Configuration  # IConfigurationBuilder support
 ```
 
 ## Quick Start
@@ -25,7 +26,7 @@ dotnet add package sINI.Configuration  # optional, for IConfigurationBuilder sup
 ### Direct Parsing
 
 ```csharp
-using sINI;
+using Zini;
 
 var config = ConfigParser.Parse("""
     # Application settings
@@ -48,7 +49,7 @@ var appName = config[""]["app_name"];       // "MyApp" (global section)
 
 ```csharp
 using Microsoft.Extensions.Configuration;
-using sINI.Configuration;
+using Zini.Configuration;
 
 var configuration = new ConfigurationBuilder()
     .AddConfigFile("appsettings.ini", optional: false, reloadOnChange: true)
@@ -65,8 +66,8 @@ See [docs/config-format-spec.md](docs/config-format-spec.md) for the full format
 ## Building
 
 ```powershell
-dotnet build sINI.slnx
-dotnet test sINI.slnx
+dotnet build Zini.slnx
+dotnet test Zini.slnx
 ```
 
 ## License

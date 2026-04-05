@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
-using sINI.Configuration;
+using Zini.Configuration;
 
-namespace sINI.Tests;
+namespace Zini.Tests;
 
 public class ConfigFileConfigurationTests
 {

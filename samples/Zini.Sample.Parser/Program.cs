@@ -1,4 +1,4 @@
-﻿using sINI;
+﻿using Zini;
 
 var configContent = await File.ReadAllTextAsync("some.config");
 

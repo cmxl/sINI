@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-using sINI.Configuration;
+using Zini.Configuration;
 
 var config = new ConfigurationBuilder()
 	.AddConfigFile("some.config")
