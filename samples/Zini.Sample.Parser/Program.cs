@@ -1,6 +1,6 @@
 ﻿using Zini;
 
-var configContent = await File.ReadAllTextAsync("some.config");
+var configContent = await File.ReadAllTextAsync("sample.ini");
 
 var config = ConfigParser.Parse(configContent);
 

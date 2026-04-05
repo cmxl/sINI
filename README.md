@@ -15,7 +15,10 @@ A high-performance, zero-allocation INI-style configuration file parser for .NET
 
 ## Installation
 
-[![https://www.nuget.org/packages/Zini.Configuration](https://img.shields.io/nuget/dt/Zini.Configuration)](https://www.nuget.org/packages/Zini.Configuration)
+| Package | Status |
+| --- | --- |
+| Zini | [![Zini](https://img.shields.io/nuget/dt/Zini)](https://www.nuget.org/packages/Zini) |
+| Zini.Configuration | [![Zini.Configuration](https://img.shields.io/nuget/dt/Zini.Configuration)](https://www.nuget.org/packages/Zini.Configuration) |
 
 ```shell
 dotnet add package Zini.Configuration  # IConfigurationBuilder support

@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Zini" Version="1.0.0" />
+	<PackageReference Include="Zini.Configuration" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="sample.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

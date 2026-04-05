@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Zini.Configuration;
 
 var config = new ConfigurationBuilder()
-	.AddConfigFile("some.config")
+	.AddConfigFile("sample.ini")
 	.Build();
 
 var debugView = config.GetDebugView();
