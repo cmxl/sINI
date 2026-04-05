@@ -4,10 +4,24 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <Version>1.0.0</Version>
+    <Authors>cmxl (Tobias Haimerl)</Authors>
+    <Description>A fast, zero-allocation INI-style configuration file parser for .NET.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/cmxl/sini</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cmxl/sini.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ini;config;parser;configuration</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="sINI.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 </Project>
